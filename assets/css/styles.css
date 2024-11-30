@@ -97,6 +97,11 @@ footer {
     margin: auto;
 }
 
+/* CSS for reCAPTCHA widget */
+.g-recaptcha {
+    margin-bottom: 1rem;
+}
+
 /* Additional media query for smaller screens */
 @media (max-width: 768px) {
     nav ul {
