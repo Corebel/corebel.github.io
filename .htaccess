@@ -1,0 +1,17 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Redirect all requests to HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Prevent access to certain files and directories
+<FilesMatch "(\.htaccess|\.htpasswd|/assets/)">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Custom error pages
+ErrorDocument 403 /error/index.html?code=403
+ErrorDocument 404 /error/index.html?code=404
+ErrorDocument 500 /error/index.html?code=500
