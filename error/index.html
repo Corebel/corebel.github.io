@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Corbel LLC</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Corbel LLC</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/services/">Services</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/privacy/">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="error">
+            <h2>Error</h2>
+            <p>We're sorry, but there was an error with your request.</p>
+            <h3 id="error-code"></h3>
+            <p>If you believe this is a mistake, please <a href="/contact/">contact us</a>.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Corbel LLC. All rights reserved.</p>
+    </footer>
+    <script src="/assets/js/scripts.js"></script>
+    <script>
+        // JavaScript to handle error codes and messages
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const errorCode = urlParams.get('code');
+            const errorMessage = {
+                403: "403 Forbidden: You don't have permission to access this page.",
+                404: "404 Not Found: The page you're looking for doesn't exist.",
+                500: "500 Internal Server Error: There was a problem with the server.",
+                default: "An unexpected error occurred. Please try again later."
+            };
+            document.getElementById('error-code').innerText = errorMessage[errorCode] || errorMessage.default;
+        });
+    </script>
+</body>
+</html>
