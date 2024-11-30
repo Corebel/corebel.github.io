@@ -48,4 +48,18 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    // Add Copilot iframe dynamically
+    const copilotIframe = document.createElement('iframe');
+    copilotIframe.src = "https://copilotstudio.microsoft.com/environments/Default-1849246c-173d-4d4b-8155-25047bc80c5b/bots/crdfc_codeCraft/webchat?__version__=2";
+    copilotIframe.frameBorder = "0";
+    copilotIframe.style.width = "300px";
+    copilotIframe.style.height = "400px";
+    copilotIframe.style.position = "fixed";
+    copilotIframe.style.bottom = "10px";
+    copilotIframe.style.right = "10px";
+    copilotIframe.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.5)";
+    copilotIframe.style.zIndex = "1000";
+
+    document.body.appendChild(copilotIframe);
 });
