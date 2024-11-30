@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="script-src https://hcaptcha.com https://*.hcaptcha.com; frame-src https://hcaptcha.com https://*.hcaptcha.com;">
     <title>Contact Us - Corbel LLC</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <script src="https://hcaptcha.com/gk/hcaptcha.js" async defer></script>
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
     <header>
@@ -35,27 +35,14 @@
                 <input type="email" id="email" name="email" required>
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
-                <div class="hcaptcha-container">
+                <div class="h-captcha" data-sitekey="55eee5d0-b594-41b6-bf72-13084c2c72be"></div> <!-- Replace with your hCaptcha site key -->
                 <button type="submit">Submit</button>
             </form>
         </section>
     </main>
-    <?php
-    $secret = '55eee5d0-b594-41b6-bf72-13084c2c72be';
-    $passcode = $_POST['h-captcha-response'];
-
-    $response = hCaptcha.verify($secret, $passcode);
-    if ($response->success) {
-    echo "hCaptcha verification successful!";
-    } else {
-    echo "hCaptcha verification failed.";
-    }
-    ?>
-
     <footer>
         <p>&copy; 2024 Corbel LLC. All rights reserved.</p>
     </footer>
     <script src="/assets/js/scripts.js"></script>
-    <script> hCaptcha.render('hcaptcha-container', { sitekey: '55eee5d0-b594-41b6-bf72-13084c2c72be' });</script>
 </body>
 </html>
