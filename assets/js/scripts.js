@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         link.setAttribute("download", "");
     });
 
-    // Contact Form Submission with reCAPTCHA
+    // Contact Form Submission with hCaptcha
     const form = document.getElementById("contact-form");
     if (form) {
         form.addEventListener("submit", async function (event) {
@@ -23,6 +23,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const formData = new FormData(form);
             const payload = new URLSearchParams(formData);
+
+            const hcaptchaResponse = document.querySelector('[name="h-captcha-response"]').value;
+            if (!hcaptchaResponse) {
+                alert("Please complete the hCaptcha.");
+                return;
+            }
+            payload.append("h-captcha-response", hcaptchaResponse);
+
+            const response = await fetch(form.action, {
+                method: form.method,
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: payload,
+            });
 
             if (response.ok) {
                 alert("Thank you for your message. We'll get back to you shortly.");
