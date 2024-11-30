@@ -24,26 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const formData = new FormData(form);
             const payload = new URLSearchParams(formData);
 
-            const recaptchaResponse = grecaptcha.getResponse();
-            if (!recaptchaResponse) {
-                alert("Please complete the reCAPTCHA.");
-                return;
-            }
-            payload.append("g-recaptcha-response", recaptchaResponse);
-
-            const response = await fetch(form.action, {
-                method: form.method,
-                headers: {
-                    "Accept": "application/json",
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                body: payload,
-            });
-
             if (response.ok) {
                 alert("Thank you for your message. We'll get back to you shortly.");
                 form.reset();
-                grecaptcha.reset();
             } else {
                 alert("There was a problem submitting your message. Please try again later.");
             }
