@@ -102,9 +102,26 @@ footer {
     margin-bottom: 1rem;
 }
 
+/* CSS for Copilot iframe */
+.copilot-chat {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    height: 400px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
 /* Additional media query for smaller screens */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
+    }
+    .copilot-chat {
+        width: 80%;
+        height: 300px;
+        right: 10%;
     }
 }
