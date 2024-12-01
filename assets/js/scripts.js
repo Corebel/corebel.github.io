@@ -49,11 +49,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Add Copilot iframe dynamically
-    const copilotIframe = document.createElement('iframe');
-    copilotIframe.src = "https://copilotstudio.microsoft.com/environments/Default-1849246c-173d-4d4b-8155-25047bc80c5b/bots/crdfc_codeCraft/webchat?__version__=2";
-    copilotIframe.frameBorder = "0";
-    copilotIframe.classList.add('copilot-chat');
+    // Function to reset Copilot session
+    function resetCopilotSession() {
+        const copilotIframe = document.createElement('iframe');
+        copilotIframe.src = "https://copilotstudio.microsoft.com/environments/Default-1849246c-173d-4d4b-8155-25047bc80c5b/bots/crdfc_codeCraft/webchat?__version__=2";
+        copilotIframe.frameBorder = "0";
+        copilotIframe.classList.add('copilot-chat');
 
-    document.body.appendChild(copilotIframe);
+        // Remove existing iframe if present
+        const existingIframe = document.querySelector('.copilot-chat');
+        if (existingIframe) {
+            existingIframe.remove();
+        }
+
+        document.body.appendChild(copilotIframe);
+    }
+
+    // Reset Copilot session on page load
+    resetCopilotSession();
 });
