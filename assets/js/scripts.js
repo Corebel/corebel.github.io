@@ -67,4 +67,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Reset Copilot session on page load
     resetCopilotSession();
+
+    // Toggle AI chat visibility
+    const toggleChatButton = document.getElementById('toggleChatButton');
+    toggleChatButton.addEventListener('click', function() {
+        const copilotChat = document.querySelector('.copilot-chat');
+        if (copilotChat.style.display === 'none' || copilotChat.style.display === '') {
+            copilotChat.style.display = 'block';
+        } else {
+            copilotChat.style.display = 'none';
+        }
+    });
 });
