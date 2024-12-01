@@ -23,6 +23,11 @@ header h1 {
     margin: 0;
 }
 
+header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -113,6 +118,21 @@ footer {
     border: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000; /* Ensure it appears above other elements */
+    display: none; /* Initially hidden */
+}
+
+#toggleChatButton {
+    background-color: #ff7e5f;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#toggleChatButton:hover {
+    background-color: #feb47b;
 }
 
 /* Additional media query for smaller screens */
