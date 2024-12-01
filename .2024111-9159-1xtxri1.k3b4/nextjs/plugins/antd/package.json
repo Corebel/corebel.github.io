@@ -1,7 +1,0 @@
-{
-    "dependencies": {
-        "antd": "^4.10.2",
-        "@ant-design/icons": "^4.4.0"
-    },
-    "devDependencies": {} 
-}

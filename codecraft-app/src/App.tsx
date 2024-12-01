@@ -116,3 +116,23 @@ dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
 };
 
 export default App;
+
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
+import Chat from "./pages/Chat";
+import CodeAssistance from "./pages/CodeAssistance";
+
+const App = () => {
+    return (
+        <Router>
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/chat" component={Chat} />
+                <Route path="/code-assistance" component={CodeAssistance} />
+            </Switch>
+        </Router>
+    );
+};
+
+export default App;
