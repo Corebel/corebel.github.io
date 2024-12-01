@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Teko', sans-serif;
     font-weight: bold;
     margin: 0;
     padding: 0;
@@ -80,7 +80,6 @@ button:hover {
     margin-top: 0.5rem;
 }
 
-/* Additional styling for the toggle button and iframe */
 #toggle-chat {
     margin: 1rem 0;
 }
