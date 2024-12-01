@@ -1,10 +1,10 @@
 body {
-    font-family: 'Teko', sans-serif;
-    font-weight: bold;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background: linear-gradient(to right, #141E30, #243B55);
+    color: white;
 }
 
 header, footer {
@@ -49,6 +49,7 @@ section {
     height: 200px;
     overflow-y: scroll;
     margin-bottom: 1rem;
+    background-color: #1a1a1a;
 }
 
 #message-input, #code-input {
@@ -56,6 +57,8 @@ section {
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #2a2a2a;
+    color: white;
 }
 
 button {
@@ -84,9 +87,19 @@ button:hover {
     margin: 1rem 0;
 }
 
-#iframe-container {
-    display: none;
+#ai-chat {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 300px;
-    margin-top: 1rem;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    display: none;
+}
+
+#ai-chat-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
